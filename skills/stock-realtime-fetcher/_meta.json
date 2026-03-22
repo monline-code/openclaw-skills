@@ -1,0 +1,10 @@
+{
+  "name": "stock-realtime-fetcher",
+  "version": "1.0.0",
+  "author": "MOSS",
+  "created": "2026-03-20",
+  "description": "A 股实时行情数据获取，支持 5 个数据源自动故障转移",
+  "tags": ["stock", "finance", "china", "realtime"],
+  "dependencies": ["requests"],
+  "optional_dependencies": ["akshare", "baostock"]
+}
