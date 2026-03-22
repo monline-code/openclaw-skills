@@ -1,0 +1,10 @@
+{
+  "name": "feishu-bot-manager",
+  "version": "2.0.0",
+  "description": "飞书机器人配置助手 - 一步到位创建Agent并绑定飞书机器人",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}
