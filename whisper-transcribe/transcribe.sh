@@ -27,6 +27,11 @@ echo "转录中..."
 python3 << PYEOF
 import sys
 from faster_whisper import WhisperModel
+try:
+    from opencc import OpenCC
+    cc = OpenCC('t2s')
+except ImportError:
+    cc = None
 
 model = WhisperModel("small", device="cpu", compute_type="int8")
 segments, info = model.transcribe("$AUDIO_WAV", language="zh", vad_filter=True)
@@ -34,8 +39,11 @@ segments, info = model.transcribe("$AUDIO_WAV", language="zh", vad_filter=True)
 with open("$OUTPUT_FILE", "w", encoding="utf-8") as f:
     count = 0
     for seg in segments:
-        if seg.text.strip():
-            f.write(seg.text.strip() + "\n")
+        text = seg.text.strip()
+        if text:
+            if cc:
+                text = cc.convert(text)
+            f.write(text + "\n")
             count += 1
 print(f"转录完成: {count} 行")
 print(f"输出: $OUTPUT_FILE")

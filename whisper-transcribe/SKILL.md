@@ -3,6 +3,11 @@ name: whisper-transcribe
 description: Local audio/video transcription using faster-whisper. Automatically extracts audio from video/mp3 files and transcribes to Chinese text.
 ---
 
+---
+name: whisper-transcribe
+description: Local audio/video transcription using faster-whisper. Automatically extracts audio from video/mp3 files and transcribes to Chinese text.
+---
+
 # Whisper Transcription Skill
 
 Local audio/video transcription using faster-whisper.
